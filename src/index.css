@@ -28,3 +28,23 @@ body {
   margin: 0;
   padding: 0;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #dad8d8;
+  border-radius: 5px;
+  border: 2px solid #c5caca;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
