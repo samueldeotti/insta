@@ -46,9 +46,9 @@ function App() {
       {file1 && file2 && (
         <div className="my-10 w-full flex flex-col gap-4 px-4">
           <UserCardContainer>
-            <Title classname="bg-red-500 w-full text-white rounded-sm">Quem parou de te seguir</Title>
+            <Title classname="bg-red-500 w-full text-white rounded-sm">Who unfollowed you</Title>
             {stopedFollowing?.length === 0
-              ? <p className="text-center mb-2">Niguem parou de te seguir</p>
+              ? <p className="text-center mb-2">Nobody stopped following you</p>
               : stopedFollowing?.map((item: any, index: number) => (
                 <UserCard
                   key={ item.value + index }
@@ -58,9 +58,9 @@ function App() {
           </UserCardContainer>
 
           <UserCardContainer>
-            <Title classname="bg-green-400 w-full text-white rounded-sm">Quem começou a te seguir</Title>
+            <Title classname="bg-green-400 w-full text-white rounded-sm">Who started following you</Title>
             {startFollowing?.length === 0
-              ? <p className="text-center mb-2">Ninguem começou a te seguir</p>
+              ? <p className="text-center mb-2">Nobody started following you</p>
               : startFollowing?.map((item: any, index: number) => (
                 <UserCard
                   key={ item.value + index }
