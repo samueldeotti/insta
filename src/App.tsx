@@ -22,8 +22,8 @@ function App() {
   return (
     <>
       <Title classname="text-white font-normal mt-10 text-xl">Upload two files to compare who stopped following you and who started following you</Title>
-      <div className="mt-10 flex justify-start items-center">
-        <div className="w-[500px] self-start">
+      <div className="mt-10 flex flex-col gap-8 sm:gap-0 sm:flex-row justify-start items-center mb-10 sm:mb-0 px-4">
+        <div className="w-full sm:w-[500px] self-start">
           <Title classname="mb-4 font-normal">Upload File 1</Title>
           <FileUploader
             file={ file1 }
@@ -32,7 +32,7 @@ function App() {
             setFileContent={ setFileContent1 }
           />
         </div>
-        <div className="w-[500px] self-start">
+        <div className="w-full sm:w-[500px] self-start">
           <Title classname="mb-4 font-normal">Upload File 2</Title>
           <FileUploader
             file={ file2 }
@@ -44,11 +44,11 @@ function App() {
 
       </div>
       {file1 && file2 && (
-        <div className="my-8 flex flex-col gap-4">
+        <div className="my-10 w-full flex flex-col gap-4 px-4">
           <UserCardContainer>
-            <Title>Quem parou de te seguir</Title>
+            <Title classname="bg-red-500 w-full text-white rounded-sm">Quem parou de te seguir</Title>
             {stopedFollowing?.length === 0
-              ? <p>Niguem parou de te seguir</p>
+              ? <p className="text-center mb-2">Niguem parou de te seguir</p>
               : stopedFollowing?.map((item: any, index: number) => (
                 <UserCard
                   key={ item.value + index }
@@ -58,9 +58,9 @@ function App() {
           </UserCardContainer>
 
           <UserCardContainer>
-            <Title>Quem começou a te seguir</Title>
+            <Title classname="bg-green-400 w-full text-white rounded-sm">Quem começou a te seguir</Title>
             {startFollowing?.length === 0
-              ? <p className="text-center">Ninguem começou a te seguir</p>
+              ? <p className="text-center mb-2">Ninguem começou a te seguir</p>
               : startFollowing?.map((item: any, index: number) => (
                 <UserCard
                   key={ item.value + index }
